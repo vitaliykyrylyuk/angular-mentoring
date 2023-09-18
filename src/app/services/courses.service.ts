@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import {CoursesStoreService} from '@app/services/courses-store.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class CoursesService {
+    constructor(private store: CoursesStoreService) {}
     getAll() {
-        // Add your code here
+        return this.store.getAll();
     }
 
     createCourse(course: any) { // replace 'any' with the required interface
@@ -29,7 +31,7 @@ export class CoursesService {
     }
 
     getAllAuthors() {
-        // Add your code here
+        return this.store.getAllAuthors();
     }
 
     createAuthor(name: string) {
@@ -37,6 +39,6 @@ export class CoursesService {
     }
 
     getAuthorById(id: string) {
-        // Add your code here
+        return this.store.getAuthorById(id);
     }
 }

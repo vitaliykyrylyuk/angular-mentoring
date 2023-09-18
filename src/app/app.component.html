@@ -1,13 +1,24 @@
-<app-header></app-header>
+<app-header>
+  <div class="header-content">
+    <div class="flex items-center" *ngIf="loggedIn">
+      <span class="mr-5">{{userName}}</span>
+      <app-button [buttonText]="logoutBtnText" (click)="authenticate()"></app-button>
+    </div>
+    <app-button *ngIf="!loggedIn" [buttonText]="loginBtnText" (click)="authenticate()"></app-button>
+  </div>
+</app-header>
 <div class="app-root">
   <!-- Search component -->
   <!--<app-search></app-search>-->
 
   <!-- Info component -->
-  <!--<app-info></app-info>-->
+<!--  <app-info [title]="infoTitle" [text]="infoText">-->
+<!--    <app-button [buttonText]="addCourseBtnText"></app-button>-->
+<!--  </app-info>-->
 
   <!-- Course Card component -->
-  <!--<app-course-card></app-course-card>-->
+<!--  <app-course-card></app-course-card>-->
+  <app-course-main></app-course-main>
 
   <!-- Login Form component -->
   <!--<app-login-form></app-login-form>-->
