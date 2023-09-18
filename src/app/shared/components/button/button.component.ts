@@ -12,6 +12,7 @@ export class ButtonComponent {
     library.addIconPacks(fas);
   }
 
-  @Input() buttonText: string = '';
+  @Input() buttonText?: string;
+  @Input() isIcon: boolean = false;
   @Input() iconName: IconName | null = null;
 }

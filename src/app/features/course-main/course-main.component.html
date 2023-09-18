@@ -1,4 +1,7 @@
-<app-course-list *ngIf="!showCourseInfo" [courses]="courses" (showCourse)="onShowCourse($event)"></app-course-list>
+<app-info *ngIf="!showCourseList" [title]="infoTitle" [text]="infoText">
+  <app-button [buttonText]="addCourseBtnText" (click)="onShowList()"></app-button>
+</app-info>
+<app-course-list *ngIf="!showCourseInfo && showCourseList" [courses]="courses" (showCourse)="onShowCourse($event)"></app-course-list>
 
 <app-course-info *ngIf="showCourseInfo" [course]="selectedCourse">
   <app-button [buttonText]="backText" (click)="onGoBack()"></app-button>

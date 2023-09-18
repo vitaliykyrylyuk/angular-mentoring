@@ -1,4 +1,4 @@
-<div class="app-button" [class.app-button__single-icon] = "iconName !== null && buttonText === ''">
+<div class="app-button" [class.app-button__single-icon] = "isIcon">
   <fa-icon *ngIf="iconName" [icon]="iconName"></fa-icon>
   <span *ngIf="buttonText">
     {{buttonText}}

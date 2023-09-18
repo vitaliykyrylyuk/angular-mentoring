@@ -12,7 +12,7 @@
             <div><b>Duration: </b><span class="course-card__duration">{{course.duration}} minutes</span></div>
             <div><b>Created: </b><span class="course-card__date">{{course.creationDate}}</span></div>
         </div>
-        <div class="course-card__info-actions mt-5 flex">
+        <div class="course-card__info-actions mt-5 flex gap-y-2">
             <app-button [buttonText]="showCourseBtn" (click)="showCourse()"></app-button>
             <div *ngIf="isEditable" class="course-card__buttons ml-2 flex space-x-2">
               <ng-content></ng-content>

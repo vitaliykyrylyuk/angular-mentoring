@@ -31,7 +31,15 @@ export class CourseMainComponent implements OnInit {
     });
   }
 
-  backText: string = 'back'
+  backText: string = 'back';
+  infoTitle: string = 'Your List Is Empty';
+  infoText: string = 'Please use \'Add New Course\' button to add your first course';
+  addCourseBtnText: string = 'Add New Course';
+  showCourseList: boolean = false;
+
+  onShowList() {
+    this.showCourseList = !this.showCourseList
+  }
 
   onShowCourse(course: Course) {
     this.selectedCourse = course;
