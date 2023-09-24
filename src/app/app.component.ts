@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'courses-app';
+  loggedIn: boolean = false;
+  userName: string = 'Harry Potter';
+  loginBtnText: string = 'Login';
+  logoutBtnText: string = 'Logout';
+
+  authenticate() {
+    this.loggedIn = !this.loggedIn;
+  }
 }

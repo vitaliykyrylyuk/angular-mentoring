@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import {filter, from} from 'rxjs';
+import {mockedAuthorsList, mockedCoursesList} from '@shared/mocks/mock';
 
 @Injectable({
     providedIn: 'root'
 })
 export class CoursesStoreService {
     getAll(){
-        // Add your code here
+        return from(mockedCoursesList);
     }
 
     createCourse(course: any) { // replace 'any' with the required interface
@@ -29,7 +31,7 @@ export class CoursesStoreService {
     }
 
     getAllAuthors() {
-        // Add your code here
+        return from(mockedAuthorsList);
     }
 
     createAuthor(name: string) {
@@ -37,6 +39,6 @@ export class CoursesStoreService {
     }
 
     getAuthorById(id: string) {
-        // Add your code here
+        return from(mockedAuthorsList).pipe(filter(item => item.id == id));
     }
 }
